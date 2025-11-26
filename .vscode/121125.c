@@ -11,15 +11,14 @@ void main()
     printf("nhap day \n");
     for(i=0;i<n;i++)
         scanf("%d",&A[i]);
-    int min=A[0];
-    for(i=0;i<n;i++)
-        for(j=i;j<n;j++)
-            if (A[j]<min)
-            {
-                int c=A[j];
-                A[j]=A[i];
-                A[i]=c;
-            }
+    for(i=0;i<n-1;i++)
+        for(j=i+1;j<n;j++)
+            if(A[j]<A[i])
+        {
+            int c=A[j];
+            A[j]=A[i];
+            A[i]=c;
+        }
     printf("array:");
     for(i=0;i<n;i++)
         printf("%d ",A[i]);
